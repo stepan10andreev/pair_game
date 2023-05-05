@@ -1,0 +1,271 @@
+.game-container {
+  padding: 8px;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  width: fit-content;
+  border: 3px solid #605c5c;
+  background-color: #003838;
+  border-radius: 5px;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.card {
+  padding: 20px 15px;
+  position: relative;
+  width: max-content;
+  font-size: 20px;
+  font-style: italic;
+  border: none;
+  border-radius: 3px;
+  color: whitesmoke;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.grid-6 {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 10px;
+}
+
+.grid-8 {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 10px;
+}
+
+.grid-10 {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 10px;
+}
+
+
+.front-side {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-image: url('card-side.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 3px;
+  backface-visibility: hidden;
+  transition: 1s;
+}
+
+.back-side {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  background-color: rgb(0, 0, 0, 50%);
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  overflow: hidden;
+  transition: 1s;
+}
+
+.back-side > img {
+  max-width: 100%;
+  height: 100%;
+}
+
+.card:hover {
+  box-shadow: 0 0 4px 1px #bdcfdc;
+  transform: scale(1.1);
+}
+
+
+.card:active {
+  box-shadow: none;
+}
+
+
+.card--active .front-side {
+  transform: rotateY(180deg);
+}
+
+.card--active .back-side {
+  transform: rotateY(360deg);
+}
+
+.form-game {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.form-title {
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 30px;
+  font-weight: 900;
+  font-style: italic;
+  color: rgb(158 189 176 / 90%);
+  background-color: black;
+  border-radius: 5px;
+  /* background-color: rgba(255, 255, 255, 50%); */
+  /* box-shadow: 0 0 5px 1px rgba(255, 255, 255, 50%); */
+  box-shadow: 6px 7px 3px 0px rgb(0 0 0 / 50%);
+  /* box-shadow: 0px 0px 3px 0px rgb(0 0 0 / 50%); */
+}
+
+.form-subtitle {
+  margin: 0;
+  margin-bottom: 5px;
+  font-style: italic;
+  font-size: 8px;
+  font-weight: 600;
+  color: rgb(255, 255, 255, 50%);
+}
+
+.form-input {
+  padding: 5px;
+  -webkit-appearance: none;
+  appearance: none;
+  max-width: 200px;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 12px;
+  color: rgb(158 189 176 / 90%);
+  background-color: rgb(0, 0, 0, 50%);
+  box-shadow: 6px 7px 3px 0px rgb(0 0 0 / 50%);
+}
+
+.form-input::placeholder {
+  text-align: center;
+  font-style: italic;
+  font-size: 8px;
+  font-weight: 300;
+}
+
+.form-input::-webkit-search-decoration,
+.form-input::-webkit-search-cancel-button,
+.form-input::-webkit-search-results-button,
+.form-input::-webkit-search-results-decoration {
+  display: none;
+}
+
+.label-for-timeout-checkbox {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  /* color: rgb(0 156 149 / 90%); */
+  color: rgb(228 26 70 / 90%);
+}
+
+.label-for-radio-without-image,
+.label-for-radio-with-image {
+  display: flex;
+  align-items: center;
+  color: #007eff;
+  font-size: 12px;
+  font-weight: 900;
+
+}
+
+.label-for-radio-without-image {
+  color: #040429;
+}
+
+.radio-btn-wrapper {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-start {
+  padding: 5px;
+  font-size: 15px;
+  font-weight: 900;
+  font-style: italic;
+  border-radius: 5px;
+  background-color: transparent;
+  color: rgb(158 189 176 / 90%);
+  cursor: pointer;
+  background-color: rgb(0, 0, 0, 50%);
+  box-shadow: 6px 7px 3px 0px rgb(0 0 0 / 50%);
+}
+
+.btn-restart {
+  padding: 5px;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 15px;
+  font-weight: 900;
+  font-style: italic;
+  border-radius: 5px;
+  color: rgb(158 189 176 / 90%);
+  cursor: pointer;
+  z-index: 1;
+  background-color: rgb(0, 0, 0, 50%);
+  box-shadow: 0 0 0px 2px rgba(255, 255, 255, 50%);
+  transition: opacity 0.5s ease-in-out;
+}
+
+.overlay {
+  z-index: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.page {
+  font-family: Arial, Helvetica, sans-serif;
+  /* background-color: rgb(0, 0, 0, 90%); */
+  background-color: rgb(0 22 20 / 90%);
+}
+
+.hidden {
+  /* display: none; */
+  visibility: hidden;
+  opacity: 0;
+}
+
