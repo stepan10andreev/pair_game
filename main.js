@@ -225,11 +225,13 @@ import {Card, AmazingCard} from './Сard.js'
         // добавляем класс "невидимости" для формы после создания игры
         formGame.form.classList.add('hidden')
         // добавляем функцию таймера - по окончаию времени игра остановится (если нужно) - по условию если пользователь выбрал эту опцию, по умолчанию таймер на минуту
-        if (formGame.checkboxForTimeout.checked && formGame.timeoutInput.value && (formGame.timeoutInput.value > 0)) {
-          let count = formGame.timeoutInput.value * 1000
-          timeIsOut(count);
-        } else {
-          timeIsOut(60000);
+        if (formGame.checkboxForTimeout.checked) {
+          if (formGame.timeoutInput.value && (formGame.timeoutInput.value > 0)) {
+            let count = formGame.timeoutInput.value * 1000
+            timeIsOut(count);
+          } else {
+            timeIsOut(60000);
+          }
         }
       } else {
         // блок ИЛИ в случае если ввод в инпуте некорректный (вне диапазона от 2 до 10 или если нечетное число)
